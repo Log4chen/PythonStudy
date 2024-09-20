@@ -17,3 +17,33 @@ json 模块：json 模块提供了 JSON 编码和解码函数，可以将 Python
 
 urllib 模块：urllib 模块提供了访问网页和处理 URL 的功能，包括下载文件、发送 POST 请求、处理 cookies 等。
 '''
+
+import json
+'''
+json
+'''
+
+# 字典转换为json字符串
+data = {'name': 'Bob', 'age': 25, 'city': 'San Francisco'}
+json_str = json.dumps(data)
+print(type(json_str))
+
+# json字符串转换为字典
+json_dict = json.loads(json_str)
+print(type(json_dict))
+print(json_str)
+print(json_dict)
+
+# 美化输出
+data = {'name': 'Bob', 'age': 25, 'city': 'San Francisco'}
+json_data = json.dumps(data, indent=4, sort_keys=True)
+print(json_data)
+
+# 写入JSON文件
+with open('data.json', 'w') as file:
+    json.dump(data, file)
+
+# 读取JSON文件
+with open('data.json', 'r') as file:
+    loaded_data = json.load(file)
+    print(loaded_data)

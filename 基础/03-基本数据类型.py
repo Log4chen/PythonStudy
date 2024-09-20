@@ -108,6 +108,34 @@ dict1['c'] = 'c'
 dict1.setdefault('d', 'dd')
 print(dict1)
 
+# ** 用于字典解包（也称为字典拆包或字典展开）
+# 1、在子字典合并中解包字典
+dict1 = {'a': 1, 'b': '2'}
+dict2 = {'c': 3, 'd': '4'}
+dict3 = {**dict1, **dict2}
+print(dict3)
+
+# 2、在函数定义中收集关键字参数
+def func(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+func(a=1, b=2, c=3)
+# 输出：
+# a: 1
+# b: 2
+# c: 3
+
+# 3、在函数调用中解包字典
+# 字典的键必须与函数期望的参数名匹配。如果字典中包含函数不期望的键，或者缺少函数需要的键，会引发错误（少参数的情况，除非函数有默认值）。
+def func(a, b, c):
+    print(a, b, c)
+
+params = {'a': 1, 'b': 2, 'c': 3}
+func(**params)  # 输出：1 2 3
+
+
+
 # <class 'bytes'> bytes 类型表示的是不可变的二进制序列
 x = bytes('hello', "utf-8")
 print(x) # b'hello'
