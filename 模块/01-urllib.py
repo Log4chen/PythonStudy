@@ -8,4 +8,12 @@ urllib 包 包含以下几个模块：
     urllib.robotparser - 解析 robots.txt 文件。
 '''
 
-request.urlopen("https://www.baidu.com")
+resp = request.urlopen("https://www.baidu.com")
+
+print(f'status: {resp.status}')
+print(resp.headers)
+print(resp.read())
+
+o = parse.urlparse("https://www.runoob.com/?s=python+%E6%95%99%E7%A8%8B")
+print(o.scheme)
+

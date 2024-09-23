@@ -23,7 +23,7 @@ class User:
 tony = User('tony', 20, 100)
 
 tony.say()
-print(f'name is {tony.name}, age is {tony.age}, __weight为私有属性，外部不能访问')
+print(f'name is {tony.name}, age is {tony.age}, __weight为私有属性')
 
 User().say()
 
