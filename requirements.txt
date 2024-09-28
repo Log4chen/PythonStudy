@@ -1,3 +1,13 @@
 Flask==3.0.0
+Django==4.2.8
 pytest==7.1.1
 httprunner==4.3.5
+PyMySQL==1.0.2
+# install by compile source code dependency pg_config which from PostgreSQL
+#PyGreSQL==6.0.1
+DBUtils==3.0.0
+numpy==1.24.4
+pandas==2.0.3
+openpyxl==3.1.5
+scipy==1.10.1
+matplotlib==3.7.5

@@ -6,12 +6,21 @@ Python 推导式是一种强大且简洁的语法，适用于生成列表、字�
 相当于Java中的 seq.stream().map(x- > return y).collection(Collectors.toList())
 '''
 
+print("==========列表推导式===========")
 list = ['Bob','Tom','alice','Jerry','Wendy','Smith']
 new_list = [name.upper() for name in list if(len(name) > 3)]
 print(new_list)
 print([name.upper() for name in list])
 
-# 字典推导式
+# 这里是能换行的
+list = [
+    name.upper()
+    for name in list
+    if len(name) > 3
+]
+print(list)
+
+print("==========字典推导式===========")
 '''
 { key_expr: value_expr for value in collection }
 
@@ -21,15 +30,20 @@ print([name.upper() for name in list])
 '''
 
 # 将列表中各字符串值为键，各字符串的长度为值，组成键值对
-print({key: len(key) for key in list})
+print({key + '_': len(key) for key in list})
+print({
+    key + '=': len(key)
+    for key in list
+    if key.startswith('A')
+})
 
-# set集合推导式
+print("==========set集合推导式===========")
 '''
 { expression for item in Sequence }
 或
 { expression for item in Sequence if conditional }
 '''
-list = ['a', 'b','c','a']
+list = ('a', 'b','c','a')
 print({str + "_" for str in list}) # {'b', 'a', 'c'}
 
 # 元组推导式（生成器表达式）

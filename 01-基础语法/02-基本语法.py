@@ -49,3 +49,10 @@ print ('命令行参数为:')
 for i in sys.argv:
     print(i)
 print('python 路径为',sys.path)
+
+print("===============================")
+x = 10
+print("是的" if x > 5 else "不是")
+
+a = []
+print('是的' if a else '不是')

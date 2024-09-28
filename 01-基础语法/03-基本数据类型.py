@@ -60,16 +60,23 @@ print(r'\\\n不用r(raw)开头则不转义')
 
 # 集合类型的数据赋值
 # 列表使用 [], 可以修改
+# * 用于列表和元组解包
 list = ['a', 'b', True, 1.5, '类型可以不一致']
 list[1] = 'c'
 print('append操作返回值:', list.append('app')) # None
 print('pop:', list.pop()) # app
 list2 = ['a', 'b'] + [1, True] # append操作
+list3 = [*list2, *list, "列表解包"]
+print(list3)
+print("=============================")
 
 # 元组使用括号 (),元素类型也可以不相同, 但不能修改
+# * 用于列表和元组解包
 tuple1 = ('江苏', '浙江')
 tuple2 = ('上海',) # 如果只有一个值，需要用逗号，以区分数值运算中的括号
 tuple3 = tuple1 + tuple2 # append操作不是修改，而是得到新的元组对象
+tuple4 = ('北京', *tuple1, *tuple2)
+print(tuple4)
 
 # 集合set
 # 集合使用 {}，无序，可修改，不重复（自动去重）
