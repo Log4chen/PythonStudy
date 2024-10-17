@@ -12,7 +12,7 @@ resp = request.urlopen("https://www.baidu.com")
 
 print(f'status: {resp.status}')
 print(resp.headers)
-print(resp.read())
+print(resp.read().decode('utf-8'))
 
 o = parse.urlparse("https://www.runoob.com/?s=python+%E6%95%99%E7%A8%8B")
 print(o.scheme)
