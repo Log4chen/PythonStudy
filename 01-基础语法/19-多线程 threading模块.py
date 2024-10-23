@@ -1,5 +1,6 @@
 import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 
 '''
 类模式
@@ -68,3 +69,18 @@ reentrantLock.acquire()
 reentrantLock.acquire()
 reentrantLock.release()
 reentrantLock.release()
+
+# 线程池
+# 定义一个简单的任务函数
+def calculate_square(x):
+    return x * x
+
+# 要计算平方的数字列表
+numbers = [1, 2, 3, 4, 5]
+
+# 创建一个线程池并执行任务
+with ThreadPoolExecutor(max_workers=3) as executor:
+    # 使用map方法来简化任务提交
+    results = list(executor.map(calculate_square, numbers))
+
+print(results)  # 输出: [1, 4, 9, 16, 25]
