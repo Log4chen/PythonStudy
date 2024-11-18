@@ -52,8 +52,11 @@ if __name__ == '__main__':
     for i in range(0, 10):
         url = 'https://movie.douban.com/top250?start=' + str(i * 25) + '&filter='
         urls.append(url)
-    pool.map(main, urls)
+    # map方法时阻塞同步的；map_async方法为异步
+    # apply/apply_async 提交单个任务执行
     results = pool.map(main, urls)
+    # 关闭进程池，否则当前main方法执行完成后，主进程不会结束
+    pool.close()
     for pageItem in results:
         data.extend(pageItem)
     book = xlwt.Workbook(encoding='utf-8', style_compression=0)
