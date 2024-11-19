@@ -6,7 +6,11 @@
 import scrapy
 
 
-class ScrapyDemoItem(scrapy.Item):
+class Poem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    title = scrapy.Field()
+    author = scrapy.Field()
+    dynasty = scrapy.Field()
+    content = scrapy.Field()
     pass
