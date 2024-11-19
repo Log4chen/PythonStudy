@@ -25,8 +25,9 @@ class gushiwen_spider(scrapy.Spider):
         left = response.xpath('//*[@id="leftZhankai"]')
         div_list = left.xpath('./div[@class="sons"]')
         for div in div_list:
-            title = div.xpath('./div/div[2]/p/a/b/text()').get()
+            p = div.xpath('./div/div[2]/p')
+            title = p[0].xpath('./a/b/text()').get()
             print(title)
-            # author = div.xpath('./div/div[2]/p[1]/a/text()').get()
+            author = p[1].xpath('./a/b/text()').get()
             # print(author)
 
