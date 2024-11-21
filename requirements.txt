@@ -22,3 +22,4 @@ selenium==4.26.0
 Appium-Python-Client==4.3.0
 pytesseract==0.3.13
 scrapy==2.11.2
+mitmproxy==11.0.0

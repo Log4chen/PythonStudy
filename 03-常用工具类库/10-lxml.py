@@ -1,5 +1,7 @@
 from lxml import etree
-
+'''
+可以通过在浏览器安装xpath helper之类的插件，快速获取xpath表达式
+'''
 tree = etree.parse('../data/poem.html', etree.HTMLParser())
 div_list = tree.xpath('//*[@id="leftZhankai"]/div[@class="sons"]')
 for div in div_list:
