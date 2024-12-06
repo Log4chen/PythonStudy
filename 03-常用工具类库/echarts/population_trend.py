@@ -26,7 +26,7 @@ graduate_y = [e['total'] for e in graduate_dict_list if e['year'] >= start_year]
 # 数值范围1-100 数值太小，不适合放到一个图表中
 # graduate_rate_y = [round(num / baby_y[i] * 100, 2) for i, num in enumerate(graduate_y)]
 
-line_chart = Line(init_opts=opts.InitOpts(width="1200px"))
+line_chart = Line(init_opts=opts.InitOpts(width="1200px", page_title="人口趋势"))
 line_chart.add_xaxis(year_x)
 line_chart.add_yaxis("应届毕业生", graduate_y, is_smooth=True,
                      label_opts=opts.LabelOpts(
